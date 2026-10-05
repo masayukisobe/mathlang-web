@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "mathlang.public_linear_inputs.v1",
+  "origin": "newly-authored-fictional-input",
+  "cases": [
+    {
+      "case": "original",
+      "equations": [
+        "3x+y=5",
+        "x+2y=5"
+      ],
+      "variableOrder": [
+        "x",
+        "y"
+      ],
+      "unit": "1",
+      "matrix": [
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "rhs": [
+        5,
+        5
+      ]
+    },
+    {
+      "case": "rhs-revised",
+      "equations": [
+        "3x+y=7",
+        "x+2y=5"
+      ],
+      "variableOrder": [
+        "x",
+        "y"
+      ],
+      "unit": "1",
+      "matrix": [
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "rhs": [
+        7,
+        5
+      ]
+    }
+  ]
+}

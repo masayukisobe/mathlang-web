@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "mathlang.public_sdof_inputs.v1",
+  "origin": "newly-authored-analytic-synthetic-observations",
+  "generation": {
+    "displacementFormula": "exp(-t/2)*cos(t), t is the numerical time in seconds",
+    "massKg": 1,
+    "stiffnessNPerM": 1.25,
+    "dampingNSPerM": 1,
+    "role": "synthetic-data-generation-only; not a fitted result supplied before identification"
+  },
+  "identification": {
+    "conditions": {
+      "massKg": 1,
+      "initialTimeS": 0,
+      "initialDisplacementM": 1,
+      "initialVelocityMPerS": -0.5,
+      "constantForceN": 0,
+      "outputTimesS": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.25,
+        2.5,
+        2.75,
+        3.0
+      ]
+    },
+    "observations": {
+      "timeS": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.25,
+        2.5,
+        2.75,
+        3.0
+      ],
+      "displacementM": [
+        1.0,
+        0.8550622110353833,
+        0.683461986410032,
+        0.5028819149876707,
+        0.32770991402245986,
+        0.16877989813967426,
+        0.033413888102318774,
+        -0.07430401075777507,
+        -0.1530918656742263,
+        -0.20393811654637037,
+        -0.22953148882811247,
+        -0.23370023981479782,
+        -0.22089718431220126
+      ]
+    },
+    "residualScaleM": 1,
+    "search": {
+      "stiffnessBoundsNPerM": [
+        0.25,
+        4
+      ],
+      "dampingBoundsNSPerM": [
+        0.1,
+        3
+      ],
+      "initialStiffnessNPerM": 0.8,
+      "initialDampingNSPerM": 0.6
+    }
+  },
+  "comparison": {
+    "conditions": {
+      "massKg": 1,
+      "initialTimeS": 0,
+      "initialDisplacementM": 0,
+      "initialVelocityMPerS": 0,
+      "constantForceN": 1,
+      "outputTimesS": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.25,
+        2.5,
+        2.75,
+        3.0
+      ]
+    },
+    "metric": "maxAbsDisplacement",
+    "metricScope": "specified-output-times",
+    "candidateSource": "baseline coefficients read from returned fit, then supplied to comparison; alternative chosen beforehand",
+    "candidates": [
+      {
+        "candidateId": "from-returned-fit",
+        "stiffnessNPerM": 1.2499999999522589,
+        "dampingNSPerM": 0.9999999999731207
+      },
+      {
+        "candidateId": "alternative-stiffer",
+        "stiffnessNPerM": 2.5,
+        "dampingNSPerM": 1
+      }
+    ]
+  }
+}

@@ -1,28 +1,20 @@
-# MathLang Web
+# MathLang web
 
-MathLangの公開ティザー。個人R&Dが外部からどう見えるかを確かめるための、別リポジトリの静的サイトです。連立方程式・二群の判断・振動同定を紹介し、既存の限定受入と、新しい一巡の検証中部分を区別します。
+MathLangの公開用ティザー。数理計算・シミュレーション・AIアシストの現在の範囲を、実数値・能力一覧・構成で示します。
 
-## ビルド
+- 公開サイト: https://masayukisobe.github.io/mathlang-web/
+- 素材: 新規本文・構成図、架空入力、選別した保存済みProcessor数値出力。
+- 製品本体、原source・assets・会話・QA・traceは同梱していません。
+- 計算実行UI、フォーム、収集、analytics、backendはありません。
 
-Node.js 22以上を使います。パッケージの追加インストールは不要です。
+Node.js 22以上で `npm run build` と `npm run check`。依存packageはありません。GitHub Actionsが明示allowlistの静的成果物だけをPagesへ公開します。
 
-```sh
-node scripts/build.mjs
-node scripts/check.mjs
-python3 -m http.server 4173 --directory dist
-```
+`provenance/public-allowlist.json` がsource・deploy・個別採用素材hashを制御します。公開manifestは採用根拠hashと公開ファイルhashを分離します。
 
-生成先は `dist/`。GitHub Pagesのworkflowは、検査したこのディレクトリだけを公開します。独立した新repoの設定を使い、本体の設定・source・submoduleを参照しません。公式手順は [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) を参照。
+`public/results/v1/` は2026-10-05の選別数値資料8点。波形はこのCSVの4系列を描いたもので製品UI画像ではありません。受入は固定SI・既知質量の1自由度、有界同定、指定出力時刻の有限候補比較です。新入力からの本人一巡は採取時点で未受入、通常AI会話は未接続、公共KBaseは構想です。
 
-## 状態と素材の更新
+`public/materials/` は初版の説明資料7点を元hashで保持した履歴です。初版の独立検算用値と、新しい実数値資料は別です。`content/capabilities.json` は共通22 operationの明示field投影で、全UI・一般Agent実行の完成を意味しません。
 
-- `content/site.json` が紹介の状態・根拠の層・適用範囲・未達・資料照合日・更新日・将来のmedia参照の正本です。資料照合日を新しい製品受入日として扱いません。
-- `src/` は新規本文・CSS・手書き説明SVG。図は製品UIや実行結果として扱いません。
-- `public/materials/` は個別選定した新規公開素材7点。原byteのhashを照合して取り込みました。原QA・trace・本人会話・既存画像・製品sourceを含みません。
-- `public/demos/d01/` は架空の生入力、`public/results/` は独立検算した説明例。開始入力へ実行済みPlanや学習済みモデルを混ぜません。
-- `provenance/public-allowlist.json` は公開repoとdeployの明示ファイル一覧。新しい素材を入れる際は、公開可否・状態・説明を確認し、この一覧とhashを更新します。
-- 生成する `dist/provenance/site.json` は採用元のsnapshot hashと公開素材hashを別欄に保持します。内部pathや原文は入れません。
+実行UI・収録済み実演は個別の公開許可と本人一巡の確認後に別版として差し替えます。
 
-新しい実演を掲載するときは、対応する版・元入力・Result・本人操作の受入と公開許可を確認してから、`media` と図・本文を更新します。D02は本人発言保存とpaired事実整合の修正後、主ペルソナの一巡が受入済みになるまで検証中です。
-
-初版にフォーム、analytics、backend、外部フォント、第三者の画像や動画はありません。掲載例の独立検算は製品の計算性能・導入実績・価格の根拠に使いません。
+波形の任意再生成は `scripts/generate-plots.py`（Matplotlib 3.10.6）。通常buildは保存済みSVGをコピーし、Pythonやsolverは実行しません。

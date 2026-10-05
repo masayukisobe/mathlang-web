@@ -43,25 +43,26 @@ for (const [path, expected] of Object.entries(allow.importedMaterialHashes)) ass
 const manifest = JSON.parse(await read('dist/provenance/site.json'));
 for (const [path, expected] of Object.entries(manifest.publicFileHashes)) assert.equal(sha(await readFile(resolve(root, 'dist', path))), expected, `Public hash mismatch: ${path}`);
 
-const html = await read('dist/index.html');
-assert(html.includes('<html lang="ja">'));
-assert(html.includes('name="viewport"'));
-assert(html.includes('Content-Security-Policy'));
-assert(!/<(?:script|form|iframe)\b/i.test(html), 'Static site contains executable/collection embeds');
-assert.equal((html.match(/<h1\b/g)||[]).length, 1);
-assert(html.includes('class="skip-link"'));
-const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
-assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML IDs');
-const hrefs = [...html.matchAll(/\b(?:href|src)="([^"]+)"/g)].map(match => match[1]);
-for (const target of hrefs) {
-  if (/^https:\/\//.test(target)) { assert.equal(target, 'https://github.com/masayukisobe/mathlang-web', 'Unexpected external link'); continue; }
-  if (target.startsWith('#')) { assert(ids.includes(target.slice(1)), `Missing anchor ${target}`); continue; }
-  assert(!target.startsWith('/'), `Project Pages link must be relative: ${target}`);
-  await access(resolve(root, 'dist', target));
-}
-for (const tag of html.match(/<img\b[^>]*>/g)||[]) {
-  assert(/\balt="[^"]*"/.test(tag), 'Missing image alternative');
-  assert(/\bwidth="\d+"/.test(tag) && /\bheight="\d+"/.test(tag), 'Image dimensions missing');
+let linkCount=0;
+for(const page of ['index.html','status.html']){
+ const html=await read(`dist/${page}`);
+ assert(html.includes('<html lang="ja">'));
+ assert(html.includes('name="viewport"'));
+ assert(html.includes('Content-Security-Policy'));
+ assert(!/<(?:script|form|iframe)\b/i.test(html),'Static site contains executable/collection embeds');
+ assert.equal((html.match(/<h1\b/g)||[]).length,1);
+ assert(html.includes('class="skip-link"'));
+ const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+ assert.equal(new Set(ids).size,ids.length,'Duplicate HTML IDs');
+ for(const [,target]of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){
+  linkCount++;
+  if(/^https:\/\//.test(target)){assert.equal(target,'https://github.com/masayukisobe/mathlang-web');continue;}
+  assert(!target.startsWith('/'),'Project links must be relative');
+  const [file,fragment]=target.split('#');
+  if(file)await access(resolve(root,'dist',file));
+  if(fragment){const targetHtml=file?await read(`dist/${file}`):html;assert(targetHtml.includes(`id="${fragment}"`),`Missing fragment ${target}`);}
+ }
+ for(const tag of html.match(/<img\b[^>]*>/g)||[]){assert(/\balt="[^"]*"/.test(tag));assert(/\bwidth="\d+"/.test(tag)&&/\bheight="\d+"/.test(tag));}
 }
 for (const [source,destination] of Object.entries(allow.staticCopies)) if (destination.endsWith('.md')) {
   const text = await read(source);
@@ -90,4 +91,22 @@ for (const [t,x] of observations) assert(Math.abs(Math.exp(-t/2)*Math.cos(t)-x)<
 const status = JSON.parse(await read('content/site.json'));
 assert.equal(status.demos.find(demo=>demo.id==='D02').developmentStage,'検証中');
 assert(status.demos.every(demo=>demo.media===null && demo.verificationKind.includes('読取照合')));
-console.log(`Checked ${allow.repositoryFiles.length} source files, ${allow.deployedFiles.length} deploy files, ${hrefs.length} HTML links, 7 selected materials and independent arithmetic. No private patterns found.`);
+console.log(`Checked ${allow.repositoryFiles.length} source files, ${allow.deployedFiles.length} deploy files, ${linkCount} HTML links, selected material hashes and independent arithmetic. No private patterns found.`);
+
+const numericProvenance=JSON.parse(await read('public/results/v1/provenance.json'));
+for(const [path,expected]of Object.entries(numericProvenance.publicFileHashes))assert.equal(sha(await readFile(resolve(root,'public/results/v1',path))),expected);
+const linearInputs=JSON.parse(await read('public/results/v1/d01-inputs.json'));
+const linearResults=JSON.parse(await read('public/results/v1/d01-results.json'));
+for(const input of linearInputs.cases){const result=linearResults.cases.find(r=>r.case===input.case);const [x,y]=result.solution;const residual=input.matrix.map((row,i)=>row[0]*x+row[1]*y-input.rhs[i]);assert(residual.every(v=>Math.abs(v)<1e-14));assert.equal(result.residualL2Norm,0);}
+const sdof=JSON.parse(await read('public/results/v1/d04-results.json'));
+const sdofInput=JSON.parse(await read('public/results/v1/d04-inputs.json'));
+const series=(await read('public/results/v1/d04-series.csv')).trim().split('\n').slice(1).map(line=>{const [series,t,x]=line.split(',');return {series,t:Number(t),x:Number(x)};});
+assert.equal(series.length,52);assert.equal(new Set(series.map(r=>r.series)).size,4);
+for(const candidate of sdof.comparison.candidates){const rows=series.filter(r=>r.series===candidate.candidateId);assert.equal(rows.length,13);assert.equal(Math.max(...rows.map(r=>Math.abs(r.x))),candidate.sampledMaxAbsDisplacementM);}
+const obs=series.filter(r=>r.series==='synthetic-observation');const fit=series.filter(r=>r.series==='identified-response');
+assert.equal(obs.length,13);for(let i=0;i<13;i++){assert.equal(obs[i].t,fit[i].t);assert.equal(obs[i].x,sdofInput.identification.observations.displacementM[i]);}
+const rmse=Math.sqrt(obs.reduce((sum,r,i)=>sum+(fit[i].x-r.x)**2,0)/13);assert(Math.abs(rmse-sdof.identification.rmseM)<1e-25);
+const defs=JSON.parse(await read('content/capabilities.json')).groups.flatMap(g=>g.definitions);
+assert.equal(defs.length,22);assert.equal(new Set(defs.map(d=>d.ref)).size,22);
+const acceptance=JSON.parse(await read('public/results/v1/acceptance.json'));assert.equal(acceptance.ordinaryAiChatConnectedForTheseInputsAtCollection,false);assert.equal(acceptance.KBasePublicKnowledge,'concept');
+console.log('Verified 52 selected waveform points, exact reported sampled maxima/RMSE and 22 unique declarations.');

@@ -1,0 +1,24 @@
+{
+  "asOf": "2026-10-05",
+  "sourceSnapshots": [
+    {
+      "id": "system-layer-snapshot",
+      "sha256": "a58ae362a60156a86f60adf83f4896d55a65a6409218329d2abf3cc9bf6b5056"
+    },
+    {
+      "id": "local-knowledge-snapshot",
+      "sha256": "99ff779ca482a566d3fdfabef622022df88e9b1adc934e427b376a43cb6e4fa0"
+    }
+  ],
+  "solidConnections": [
+    "Workbench and dedicated Agent two-group path",
+    "Workbench/Simulator and declared Processor operations",
+    "Agent and optionally selected KBase CLI read/lookup"
+  ],
+  "pending": [
+    "general Agent selection/execution of all operations",
+    "new input to saved result user roundtrip",
+    "public KBase knowledge service"
+  ],
+  "interpretation": "Layers and limited paths; not an accepted generic automatic end-to-end workflow"
+}

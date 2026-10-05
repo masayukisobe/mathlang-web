@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "mathlang.public_sdof_numeric_results.v1",
+  "resultKind": "recorded-Processor-results",
+  "identification": {
+    "stiffnessNPerM": 1.2499999999522589,
+    "dampingNSPerM": 0.9999999999731207,
+    "rmseM": 4.72134787384118e-12,
+    "domainAccepted": true,
+    "fitAccepted": true,
+    "numericalAccepted": true,
+    "localSensitivityRank": 2,
+    "rankScope": "local-numerical-rank-only"
+  },
+  "comparison": {
+    "domainAccepted": true,
+    "metricScope": "specified-output-times",
+    "candidates": [
+      {
+        "candidateId": "from-returned-fit",
+        "stiffnessNPerM": 1.2499999999522589,
+        "dampingNSPerM": 0.9999999999731207,
+        "sampledMaxAbsDisplacementM": 0.9641224954880628,
+        "numericalAccepted": true
+      },
+      {
+        "candidateId": "alternative-stiffer",
+        "stiffnessNPerM": 2.5,
+        "dampingNSPerM": 1.0,
+        "sampledMaxAbsDisplacementM": 0.538757134604894,
+        "numericalAccepted": true
+      }
+    ],
+    "winnerIds": [
+      "alternative-stiffer"
+    ],
+    "rankingStatus": "ordered"
+  }
+}

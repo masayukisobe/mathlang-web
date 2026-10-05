@@ -1,0 +1,131 @@
+{
+  "asOf": "2026-10-05",
+  "countMeaning": "declared public Processor operation definitions; not general Agent or UI acceptance",
+  "sourceSnapshotSha256": "aea38b6b941d23b1d16e4aba2e06f48f7f21faf33b152594175bc5cbcd0a0304",
+  "groups": [
+    {
+      "title": "線形代数",
+      "summary": "連立求解・残差・ノルム、有限線形写像・基底変換・分解",
+      "definitions": [
+        {
+          "ref": "mathlang.algebra.solve-linear-system@1",
+          "displayName": "Solve a linear system"
+        },
+        {
+          "ref": "mathlang.analysis.compute-residual@1",
+          "displayName": "Compute a residual"
+        },
+        {
+          "ref": "mathlang.analysis.compute-norm@1",
+          "displayName": "Compute a norm"
+        },
+        {
+          "ref": "mathlang.linalg.apply-finite-linear-map@1",
+          "displayName": "Apply a finite real linear map"
+        },
+        {
+          "ref": "mathlang.linalg.change-finite-linear-basis@1",
+          "displayName": "Change finite-map coordinate bases and Gram metrics"
+        },
+        {
+          "ref": "mathlang.linalg.decompose-finite-linear-map@1",
+          "displayName": "Metric SVD, numerical rank, kernel and image of a finite linear map"
+        }
+      ]
+    },
+    {
+      "title": "フィット・平衡",
+      "summary": "スカラー残差・パラメータ残差のフィット、スカラー平衡",
+      "definitions": [
+        {
+          "ref": "mathlang.objective.fit-scalar-residual@1",
+          "displayName": "Scalar residual least-squares fitting"
+        },
+        {
+          "ref": "mathlang.analysis.solve-scalar-equilibrium@1",
+          "displayName": "Scalar energy equilibrium solve"
+        },
+        {
+          "ref": "mathlang.objective.fit-parameter-residual@1",
+          "displayName": "Parameter residual least-squares fitting"
+        }
+      ]
+    },
+    {
+      "title": "データ・PCA",
+      "summary": "中心化した密データの学習、固定した射影・再構成",
+      "definitions": [
+        {
+          "ref": "mathlang.data.fit-pca@1",
+          "displayName": "Training-scope centered dense PCA"
+        },
+        {
+          "ref": "mathlang.data.transform-pca@1",
+          "displayName": "Frozen PCA projection and reconstruction"
+        }
+      ]
+    },
+    {
+      "title": "確率・統計",
+      "summary": "有限分布・小規模Gaussian、条件付け・標本、Welch比較、アフィン不確かさ",
+      "definitions": [
+        {
+          "ref": "mathlang.probability.describe-law@1",
+          "displayName": "Finite or small Gaussian law moments and marginal queries"
+        },
+        {
+          "ref": "mathlang.probability.condition-finite-law@1",
+          "displayName": "Positive-event finite Bayes update"
+        },
+        {
+          "ref": "mathlang.probability.sample-law@1",
+          "displayName": "Bounded selected-stream law sampling"
+        },
+        {
+          "ref": "mathlang.statistics.compare-independent-means@1",
+          "displayName": "Independent mean difference with Welch inference"
+        },
+        {
+          "ref": "mathlang.uncertainty.propagate-affine@1",
+          "displayName": "Affine probability propagation with Monte Carlo comparison"
+        }
+      ]
+    },
+    {
+      "title": "振動・動力学",
+      "summary": "固定SIの1自由度応答・同定・有限候補比較、線形MCKの時間比較",
+      "definitions": [
+        {
+          "ref": "mathlang.simulation.compute-sdof-response@1",
+          "displayName": "Fixed-SI 1DOF response"
+        },
+        {
+          "ref": "mathlang.simulation.identify-sdof-parameters@1",
+          "displayName": "Fixed-SI 1DOF identification"
+        },
+        {
+          "ref": "mathlang.simulation.compare-sdof-candidates@1",
+          "displayName": "Fixed-SI 1DOF comparison"
+        },
+        {
+          "ref": "mathlang.dynamics.compare-linear-mck-time@1",
+          "displayName": "Fixed-SI finite MCK time comparison"
+        }
+      ]
+    },
+    {
+      "title": "熱",
+      "summary": "1次元熱伝導のメッシュ・時間刻み比較",
+      "definitions": [
+        {
+          "ref": "mathlang.thermal.compare-heat-line-mesh@1",
+          "displayName": "Fixed-SI P1 heat mesh comparison"
+        },
+        {
+          "ref": "mathlang.thermal.compare-heat-line-time@1",
+          "displayName": "Fixed-SI P1 heat time comparison"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "mathlang.public_numeric_provenance.v1",
+  "version": "sanitized-results-v1",
+  "recordDate": "2026-10-05",
+  "sourceSnapshot": {
+    "sha256": "1497b35508d82feefd45595cb7a150c47242622f3621d6d971c3dee071bd5f33",
+    "hashAlgorithm": "sha256 of canonical sorted original source hash index; source index retained privately"
+  },
+  "protocolVersions": {
+    "executable": "processor.operation_executable.v2",
+    "run": "processor.operation_run.v1"
+  },
+  "operationVersions": [
+    {
+      "capabilityRef": "mathlang.algebra.solve-linear-system@1",
+      "methodRef": "mathlang.method.direct-dense-linear-solve@1",
+      "implementationRef": "mathlang.algebra.solve-linear-system.numpy-dense@1"
+    },
+    {
+      "capabilityRef": "mathlang.analysis.compute-residual@1",
+      "methodRef": "mathlang.method.direct-residual-evaluation@1",
+      "implementationRef": "mathlang.analysis.compute-residual.numpy@1"
+    },
+    {
+      "capabilityRef": "mathlang.analysis.compute-norm@1",
+      "methodRef": "mathlang.method.direct-norm-evaluation@1",
+      "implementationRef": "mathlang.analysis.compute-norm.numpy@1"
+    },
+    {
+      "capabilityRef": "mathlang.simulation.identify-sdof-parameters@1",
+      "methodRef": "mathlang.method.bounded-log-sdof-identification@1",
+      "implementationRef": "mathlang.impl.identify-sdof-parameters.scipy@1"
+    },
+    {
+      "capabilityRef": "mathlang.simulation.compare-sdof-candidates@1",
+      "methodRef": "mathlang.method.finite-sdof-candidate-comparison@1",
+      "implementationRef": "mathlang.impl.compare-sdof-candidates.scipy@1"
+    }
+  ],
+  "referenceHashes": [
+    {
+      "id": "numeric-reference-1",
+      "sha256": "cf7f434e6d92ec5d7b887707955012d888a9968ed767214ecef930002816410e"
+    },
+    {
+      "id": "numeric-reference-2",
+      "sha256": "66cc32bad568097e10b2e77cac59c39d74c8c1fa883b6abd0be579bce43fe5c3"
+    },
+    {
+      "id": "numeric-reference-3",
+      "sha256": "78b7bea6b16692ec2ad6fe3fe28cf2c402539abd7c3e906b37a013b752cafb29"
+    },
+    {
+      "id": "numeric-reference-4",
+      "sha256": "da3465159bcfd3e7976b66ad8ae103e9ff83b59a1a4a5ca0d8677e604b9910dc"
+    },
+    {
+      "id": "numeric-reference-5",
+      "sha256": "b18fa08be04eb84c48fc575606a011e014fbadba1573fc3815498fbe8d8d9923"
+    },
+    {
+      "id": "numeric-reference-6",
+      "sha256": "682f1c2b1babfc8923af548609ea74ddb4738721ad2c5ef3518f8b070d5a1cff"
+    },
+    {
+      "id": "numeric-reference-7",
+      "sha256": "765773bc545f64a96767dbbb9426f655540c014fba27b566e4ed8cc7c5c6324c"
+    },
+    {
+      "id": "numeric-reference-8",
+      "sha256": "0f201646901499f71979126275374e347e12099f4bd44fc3d76270649b5b09fe"
+    },
+    {
+      "id": "numeric-reference-9",
+      "sha256": "8ca978ec3d3af9a47c20c30307213d83f2740a5940ae561622df178d02fd4b3d"
+    }
+  ],
+  "publicationProjection": "new explicit-field projection of fictional numeric input/output and acceptance scope; full records/source/trace/paths/conversation excluded",
+  "publicFileHashes": {
+    "README.md": "ccb44fa0493f41a33c8a1d5207a33906c34c4dfb6da485b302fbfe66411a1510",
+    "acceptance.json": "85542529dae0a468b8c4d743318d2741ec72fee2b43262a22a704362049d8556",
+    "d01-inputs.json": "ec7719bdee6e91df0423254064fd6518a6b0e8cf8cddebebdbce0436111d63ec",
+    "d01-results.json": "c2d0e105fe54f45bceb4914e227057a478f941b479eb1d4ac0f56efa2dab2a0a",
+    "d04-inputs.json": "cd12a6923f5c122e3dc426c7bce40e7451d3d7bca95808fb23506056fcbe7afc",
+    "d04-results.json": "e07f5176b31f278f5ce4e239726ba201f71902242734a80a4ba0399fa605af47",
+    "d04-series.csv": "9e35967d0fbab82a52a606e1363e9417c7458d182a152f1d46f9bceb16b5aa50"
+  }
+}

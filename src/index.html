@@ -1,63 +1,18 @@
 <!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MathLangは、問いとデータを条件のわかる計算と判断につなぐAI数理工学プラットフォーム。個人R&Dとして、連立方程式・二群の判断・振動同定の現在と次の検証を紹介します。">
-  <meta name="theme-color" content="#163c30">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
-  <title>MathLang — 問いとデータを、計算と判断へ。</title>
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">本文へ移動</a>
-  <header class="site-header wrap">
-    <a class="brand" href="#top" aria-label="MathLang ページ先頭へ"><img src="assets/mark.svg" width="40" height="40" alt=""><span>MathLang</span></a>
-    <nav aria-label="主なセクション"><a href="#demos">3つの紹介</a><a href="#workflow">作業の流れ</a><a href="#status">開発の現在</a></nav>
-    <span class="rd-tag">個人R&amp;D</span>
-  </header>
-  <main id="main">
-    <section class="hero wrap" id="top" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> MATH × AI × ENGINEERING</p>
-        <h1 id="hero-title">問いとデータを、<br>条件のわかる<br><span>計算と判断へ。</span></h1>
-        <p class="hero-lead">数学知と実応用をつなぐ、<br>AI数理工学プラットフォーム。</p>
-        <p class="hero-description">式を解く。観測からモデルを作る。条件を変えて比べる。MathLangは、数学AIと条件を持つ計算をつなぎ、結果と根拠を読み直せる作業を育てています。</p>
-        <a class="button" href="#linear-example">計算の読み方を見る <span aria-hidden="true">↗</span></a>
-        <p class="hero-note">開発中の紹介ページ · 状態更新 __UPDATED_AT__</p>
-      </div>
-      <div class="hero-visual">
-        <div class="visual-heading"><span class="mini-label">ONE SMALL QUESTION</span><span class="visual-number">01 / 03</span></div>
-        <p class="visual-question">「この答えは、元の式を満たす？」</p>
-        <figure><img src="assets/linear.svg" width="600" height="360" alt="架空の2式 3x+y=5 と x+2y=5。独立検算した解はx=1、y=2で、元式の残差は両方0。"><figcaption>計算の読み方を示す説明例。実行画面ではありません。</figcaption></figure>
-        <div class="visual-end"><span aria-hidden="true">↳</span><p>答えに、<strong>元の問題と確かめ方</strong>を添える。</p></div>
-      </div>
-    </section>
-    <div class="principle-band"><div class="wrap"><p>解だけでなく、条件と根拠まで。</p><span>問い <i aria-hidden="true">→</i> 確認 <i aria-hidden="true">→</i> 計算 <i aria-hidden="true">→</i> 判断</span></div></div>
-    <section class="section wrap" id="demos" aria-labelledby="demos-title">
-      <div class="section-heading"><p class="eyebrow">THREE WAYS IN</p><h2 id="demos-title"><span class="heading-phrase">基本数学から、</span><span class="heading-phrase">工学の判断へ。</span></h2><p>小さな式から始めて、データの読み方、観測とモデルの関係へ。<br class="desktop-break">3つの問いで、MathLangが育てている作業を紹介します。</p></div>
-      <div class="demo-grid">__DEMO_CARDS__</div>
-      <p class="section-note">掲載図は新しく描いた説明図です。製品の実行UIや収録済み実演は、対応する一巡の検証後に差し替えます。</p>
-    </section>
-    <section class="example-section" id="linear-example" aria-labelledby="example-title"><div class="wrap example-grid">
-      <div><p class="eyebrow">READ THE CALCULATION</p><h2 id="example-title">元の式に戻す。<br>そこから読めることを考える。</h2><p>架空の連立方程式を、独立に代入して確かめます。残差は「左辺 − 右辺」。この厳密な数の説明では、両方の残差とそのノルムは0です。</p><p>実際の数値計算では、小さい残差と真の解に近いことの保証を分けて読みます。条件や精度を含めて、何が確かめられたかを扱うのが次の問いです。</p><p class="fine-print">ここに示す値は説明用の独立検算で、MathLangの実行・保存結果やFloat64の実測値ではありません。</p></div>
-      <div class="calculation-sheet"><div class="sheet-heading"><span>架空入力 / D01</span><span class="mini-label">INDEPENDENT CHECK</span></div><div class="equations"><p>3x + y = 5</p><p>x + 2y = 5</p></div><div class="answer"><span>解</span><strong>x = 1, y = 2</strong></div><dl class="check-list"><div><dt>1つ目の式</dt><dd>3 × 1 + 2 − 5 = <strong>0</strong></dd></div><div><dt>2つ目の式</dt><dd>1 + 2 × 2 − 5 = <strong>0</strong></dd></div><div><dt>残差のノルム</dt><dd>√(0² + 0²) = <strong>0</strong></dd></div></dl><div class="sheet-links"><a href="demos/d01/start-data.json">架空の生入力（JSON）</a><a href="results/d01-explanation.json">独立検算例（JSON）</a></div></div>
-    </div></section>
-    <section class="section wrap" id="workflow" aria-labelledby="workflow-title">
-      <div class="section-heading"><p class="eyebrow">FROM QUESTION TO EVIDENCE</p><h2 id="workflow-title"><span class="heading-phrase">人とAIと数学が、</span><span class="heading-phrase">役割を持つ。</span></h2><p>本人の問いを整理し、条件を確認してから計算へ。<br class="desktop-break">この流れを、各デモの入口と保存された根拠へつないでいます。</p></div>
-      <ol class="flow" role="list"><li role="listitem"><span class="flow-index">01</span><span class="flow-owner">本人</span><h3>問いと生入力</h3><p>知りたいことと、手元の式・表・観測を出す。</p></li><li role="listitem"><span class="flow-index">02</span><span class="flow-owner">AI</span><h3>条件と方法を整理</h3><p>数学知を参照し、不足している条件を確かめる。</p></li><li role="listitem"><span class="flow-index">03</span><span class="flow-owner">本人</span><h3>前提を確認</h3><p>データの意味、単位、範囲、採取条件を確認する。</p></li><li role="listitem"><span class="flow-index">04</span><span class="flow-owner">数理処理</span><h3>宣言した計算</h3><p>対象と方法を定め、結果と成立条件を読む。</p></li><li role="listitem"><span class="flow-index">05</span><span class="flow-owner">本人</span><h3>判断と根拠を残す</h3><p>元の条件と結果を結び、後から読み直す。</p></li></ol>
-      <p class="section-note">専用経路で確認した部分と、新しい一巡へ接続している部分があります。各紹介の現在の範囲を、下に分けて示します。</p>
-    </section>
-    <section class="status-section" id="status" aria-labelledby="status-title"><div class="wrap section">
-      <div class="section-heading status-heading"><div><p class="eyebrow">A RESEARCH PROJECT, IN VIEW</p><h2 id="status-title"><span class="heading-phrase">今あるものと、</span><span class="heading-phrase">次に確かめること。</span></h2></div><p>個人R&amp;Dとして開発中です。数学API・専用操作・通常会話・本人の一巡を分けて確かめています。実装済みの表示は、記載した限定範囲に対応します。</p></div>
-      <div class="scope-list">__SCOPE_ROWS__</div>
-      <div class="verification-note"><span class="mini-label">ABOUT THE DATES</span><p>状態・更新日：__UPDATED_AT__。資料照合日は保存された根拠を読んだ日です。受入は過去の固定版の範囲で、新しい製品実行や現source全体の再受入を表しません。</p></div>
-      <div class="next-header"><h3>紹介を育てる、次の題材</h3><span>紹介構想 / 数学の既存根拠は別に記載</span></div><div class="next-grid">__NEXT_CARDS__</div>
-    </div></section>
-    <section class="section wrap materials" id="materials" aria-labelledby="materials-title"><div><p class="eyebrow">INPUTS &amp; ORIGIN</p><h2 id="materials-title"><span class="heading-phrase">小さな入力、</span><span class="heading-phrase">確かめられる来歴。</span></h2><p>公開素材は、新規の説明文・SVG・架空の生入力です。二群の8行CSVと、解析式から作った振動13点も用意しました。これらの新しい入力を製品で実行した結果は、初版に掲載していません。</p></div><div class="materials-links"><a href="materials/README.md"><span>3つの入力と適用条件を読む</span><span aria-hidden="true">↗</span></a><a href="materials/d02-start.csv"><span>二群の架空入力（CSV）</span><span aria-hidden="true">↗</span></a><a href="materials/d04-observations.tsv"><span>振動の合成観測（TSV）</span><span aria-hidden="true">↗</span></a><a href="materials/d04-conditions.txt"><span>振動の宣言条件（TXT）</span><span aria-hidden="true">↗</span></a><a href="provenance/site.json"><span>状態・採用範囲・公開ファイルのhash</span><span aria-hidden="true">↗</span></a></div></section>
-  </main>
-  <footer class="site-footer wrap"><div><a class="brand" href="#top"><img src="assets/mark.svg" width="32" height="32" alt=""><span>MathLang</span></a><p>問いとデータを、条件のわかる計算と判断へ。</p></div><div class="footer-meta"><p>__RELEASE__ · __UPDATED_AT__</p><p>__REPO_LINK__</p></div></footer>
-</body>
-</html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"><title>MathLang — 数理計算・シミュレーション・AIアシスト</title><meta name="description" content="MathLangの数理計算、Simulator、Agent、KBase。合成観測からの振動同定と候補比較の実数値、宣言された計算能力と現在の接続を紹介します。"><link rel="icon" href="assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"></head>
+<body id="top"><a class="skip-link" href="#main">本文へ移動</a>
+<header class="site-header wrap"><a class="brand" href="#top"><img src="assets/mark.svg" width="32" height="32" alt=""><span>MathLang</span></a><nav aria-label="主要"><a href="#example">計算例</a><a href="#system">構成</a><a href="#capabilities">能力</a><a href="status.html">開発状況</a></nav><span class="tag">個人R&amp;D · 開発中</span></header>
+<main id="main" tabindex="-1"><section class="hero wrap" aria-labelledby="hero-title"><div class="hero-heading"><div><p class="eyebrow">MATHEMATICAL COMPUTING</p><h1 id="hero-title">MathLang</h1><p class="hero-lead">数理計算 / シミュレーション / AIアシスト</p></div><div class="hero-side"><p>式・データ・モデルを扱うWorkbench。<br>条件を整理するAgent、計算するProcessor、<br>数理知識を持つKBase。</p><div class="hero-links"><a class="button" href="#example">計算例を見る <span aria-hidden="true">↘</span></a><a href="#system">構成と能力 <span aria-hidden="true">↓</span></a></div></div></div>
+<div class="use-strip" aria-label="計算の領域"><span>線形代数</span><span>フィット・平衡</span><span>データ・PCA</span><span>確率・統計</span><span>振動・動力学</span><span>熱</span></div>
+<article class="engineering-example" id="example" aria-labelledby="example-title"><div class="example-header"><div><p class="eyebrow">SIMULATOR × PROCESSOR</p><h2 id="example-title">観測から係数へ。候補から比較へ。</h2></div><p class="example-kind">Processor実出力の可視化 · <br>合成観測13点 · 固定SI · 1自由度</p></div><div class="engineering-grid">
+<section class="plot-panel" aria-labelledby="fit-title"><div class="plot-title"><span class="step">01</span><h3 id="fit-title">観測 → 同定</h3></div><p class="condition">m = 1 kg · 自由応答 · x₀ = 1 m · v₀ = −0.5 m/s</p><figure><img src="assets/identified-response.svg" width="660" height="340" alt="合成観測の13点と同定応答が重なり、1mから減衰して3秒で約マイナス0.221mに至る。"><figcaption><span class="legend-dot" aria-hidden="true"></span>合成観測 <span class="legend-line" aria-hidden="true"></span>同定応答</figcaption></figure><div class="fit-values"><div><span>返された剛性 k</span><strong>≈ 1.25 <small>N/m</small></strong></div><div><span>返された減衰 c</span><strong>≈ 1.00 <small>N·s/m</small></strong></div></div><p class="plot-note">正のk/cを範囲内で探索。観測RMSE = 4.72 × 10⁻¹² m。</p></section>
+<section class="plot-panel" aria-labelledby="compare-title"><div class="plot-title"><span class="step">02</span><h3 id="compare-title">条件を変えて → 2候補を比較</h3></div><p class="condition">m = 1 kg · 外力 1 N · x₀ = 0 · v₀ = 0</p><figure><img src="assets/candidate-response.svg" width="660" height="340" alt="同定係数候補と剛性2.5N毎mの候補の応答。指定時刻の最大絶対変位はそれぞれ0.9641mと0.5388m。"><figcaption><span class="legend-line" aria-hidden="true"></span>同定係数候補 <span class="legend-line alternate" aria-hidden="true"></span>剛性2.5 N/mの候補</figcaption></figure><div class="metric-row"><span>同定係数候補</span><strong>0.9641 <small>m</small></strong></div><div class="metric-row"><span>剛性2.5 N/mの候補</span><strong>0.5388 <small>m</small></strong></div><p class="plot-note">指定出力時刻での最大 |x|。減衰はいずれも約1 N·s/m。</p></section></div>
+<div class="example-footer"><p>点を結ぶ線は返された時刻の表示。同定と比較の初期条件・外力は別です。</p><div><a href="results/v1/d04-inputs.json">入力・条件</a><a href="results/v1/d04-results.json">実数値</a><a href="results/v1/d04-series.csv">4系列CSV</a><a href="status.html#d04">適用範囲</a></div></div></article></section>
+<section class="section wrap" id="system" aria-labelledby="system-title"><div class="section-heading"><p class="eyebrow">WORKSPACE, COMPUTATION &amp; KNOWLEDGE</p><h2 id="system-title">MathLangの構成</h2></div><figure class="system-map"><div class="workbench-node"><div><span class="node-label">WORKSPACE</span><h3>Workbench</h3><p>式・モデル・データ・条件・結果を置く作業場所</p></div><div class="simulator-node"><h4>Simulator</h4><p>モデルの設定・観測・応答・同定・比較を読む専用ビュー</p><span class="state">固定SIの1自由度経路</span></div></div><div class="system-components">
+<article><p class="connection solid">Workbench → Agent（二群専用）</p><div class="system-node"><span class="node-label">CONVERSATION</span><h3>Agent</h3><p>問い・採取条件・方法の候補を整理。二群の専用経路で訂正と再実行。</p><span class="state pending">保存を含む一巡は検証中</span></div><p class="future-link">全計算能力の一般的な自動選択・実行は未接続</p></article>
+<article><p class="connection solid">Workbench → Processor（宣言operation）</p><div class="system-node"><span class="node-label">COMPUTATION</span><h3>Processor</h3><p>数値と対象・単位・条件を受け取り、結果と数値上の診断を返す。</p><span class="state">共通operation 22定義</span></div></article>
+<article><p class="connection indirect">Agent → KBase（選択式CLI参照）</p><div class="system-node"><span class="node-label">MATHEMATICAL KNOWLEDGE</span><h3>KBase</h3><p>定義・命題・成立条件・関係・出典を持つローカル数理知識。</p><span class="state">参照・検索の実装</span></div><div class="public-kbase"><strong>公共ナレッジ公開</strong><span class="state pending">構想</span></div></article></div><figcaption>構成を示す説明図。実線は記載した範囲の既存経路、点線は未接続または構想。一般会話からすべての計算を自動実行する構成ではありません。</figcaption></figure></section>
+<section class="capability-section" id="capabilities" aria-labelledby="capabilities-title"><div class="section wrap"><div class="section-heading capability-heading"><div><p class="eyebrow">PROCESSOR OPERATIONS</p><h2 id="capabilities-title">宣言された計算能力</h2></div><p><strong>22</strong> 定義 / 6領域</p></div><div class="capability-grid">__CAPABILITIES__</div><p class="section-note">各operationには対象・方法・入力の契約があります。ここで示す数は定義数で、全領域のUIやAgentからの自動実行を表しません。<a href="capabilities.json">定義一覧</a></p></div></section>
+<section class="section wrap" aria-labelledby="more-title"><div class="section-heading"><p class="eyebrow">INPUT → RESULT → CONDITIONS</p><h2 id="more-title">式と、判断のためのデータ</h2></div><div class="more-grid"><article class="linear-example"><div class="small-title"><h3>連立方程式 → 残差</h3><span class="state">実数値</span></div><div class="linear-cases"><div><span>入力</span><code>3x + y = 5<br>x + 2y = 5</code><p>x = 1, y = 2</p></div><div><span>右辺を訂正</span><code>3x + y = 7<br>x + 2y = 5</code><p>x = 1.8, y = 1.6</p></div></div><p class="result-note">いずれも残差 [0, 0] · l2ノルム 0</p><div class="inline-links"><a href="results/v1/d01-inputs.json">架空入力</a><a href="results/v1/d01-results.json">Processor出力</a><a href="status.html#d01">現在の範囲</a></div></article><article class="judgment-example"><div class="small-title"><h3>二群の比較 → 判断</h3><span class="state pending">検証中</span></div><ol class="judgment-flow"><li>採取条件と、必要な改善幅を確認</li><li>独立二群の平均差・不確かさを計算</li><li>条件を訂正し、元の条件でも再実行</li></ol><p>専用Agent経路で操作・数値・再実行を確認。本人原文の保存と採取事実の整合を修正中。</p><div class="inline-links"><a href="materials/d02-start.csv">架空8行CSV</a><a href="status.html#d02">検証状況</a></div></article></div></section>
+<section class="knowledge-section"><div class="wrap knowledge-grid"><div><p class="eyebrow">KBASE</p><h2>数理知識を、条件とともに。</h2><p>ローカルの知識には、PCA・一般化固有値、確率・Markov、動力学・Newmark、熱と境界条件などを収録。参照・検索の経路を実装しています。</p></div><div class="knowledge-future"><span class="state pending">構想</span><h3>公共ナレッジ</h3><p>知識を公開し、方法の成立条件と出典を辿れるサービスへ。公開サービスと、一般の計算方法選択への接続はこれからです。</p></div></div></section></main>
+<footer class="site-footer wrap"><div><a class="brand" href="#top"><img src="assets/mark.svg" width="28" height="28" alt=""><span>MathLang</span></a><p>__UPDATED_AT__ · 静的な紹介。掲載値は架空入力の保存済み出力。</p></div><div class="footer-links"><a href="status.html">開発状況・適用範囲</a><a href="provenance/site.json">版と公開素材のhash</a>__REPO_LINK__</div></footer></body></html>

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "mathlang.public_numeric_acceptance.v1",
+  "asOf": "2026-10-05",
+  "version": "sanitized-results-v1",
+  "executionScope": "direct public Processor stdio",
+  "D01": {
+    "scope": "two dimensionless 2x2 linear systems, solve/residual/l2-norm",
+    "numericProductsConform": true,
+    "exactRationalSubstitutionCrosscheckPassed": true,
+    "originalAnchorReplayProductsEqual": true,
+    "newTextInputUiPersonaAcceptedAtCollection": false
+  },
+  "D04": {
+    "scope": "fixed SI, known mass, positive k/c bounded identification from 13 synthetic observations; two finite candidates",
+    "identificationDomainAccepted": true,
+    "comparisonDomainAccepted": true,
+    "closedFormComparisonCrosscheckPassed": true,
+    "closedFormMaxPointwiseErrorM": 2.220446049250313e-16,
+    "comparisonMetricScope": "specified-output-times",
+    "newModelTsvUiPersonaAcceptedAtCollection": false
+  },
+  "ordinaryAiChatConnectedForTheseInputsAtCollection": false,
+  "KBasePublicKnowledge": "concept",
+  "continuousMaximumCertified": false,
+  "globalUniquenessCertified": false,
+  "globalOptimumCertified": false,
+  "timingOrPriceClaims": []
+}

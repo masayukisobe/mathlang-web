@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "mathlang.public_linear_numeric_results.v1",
+  "resultKind": "recorded-Processor-results",
+  "cases": [
+    {
+      "case": "original",
+      "solution": [
+        1.0,
+        2.0
+      ],
+      "residual": [
+        0.0,
+        0.0
+      ],
+      "residualL2Norm": 0.0,
+      "residualDefinition": "A*x-b",
+      "productsPresentAndConforming": true
+    },
+    {
+      "case": "rhs-revised",
+      "solution": [
+        1.8,
+        1.6
+      ],
+      "residual": [
+        0.0,
+        0.0
+      ],
+      "residualL2Norm": 0.0,
+      "residualDefinition": "A*x-b",
+      "productsPresentAndConforming": true
+    }
+  ]
+}

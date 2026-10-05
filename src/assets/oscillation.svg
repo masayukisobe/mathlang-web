@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+ <rect width="600" height="360" rx="20" fill="#ebf1f2"/>
+ <g font-family="system-ui,sans-serif" fill="#163c30">
+  <text x="32" y="42" font-size="14" letter-spacing="2">OBSERVATION TO MODEL</text><text x="466" y="42" font-size="13">模式図 / D04</text>
+  <rect x="32" y="76" width="536" height="163" rx="14" fill="#fffdf7" stroke="#cedbda"/>
+  <text x="54" y="104" font-size="13" fill="#566458">観測のイメージ（数値結果ではありません）</text>
+  <path d="M54 161h486M65 118v104" fill="none" stroke="#cbd6d1"/>
+  <path d="M66 124C84 123 93 132 107 154S133 199 153 197 177 186 193 165 219 139 239 145 262 164 281 173 307 179 325 167 350 153 370 159 394 170 410 169 439 159 457 161 494 165 521 163" fill="none" stroke="#386b66" stroke-width="3"/>
+  <text x="540" y="222" font-size="13">t</text><text x="51" y="139" font-size="13">x</text>
+  <rect x="32" y="266" width="158" height="62" rx="10" fill="#fffdf7" stroke="#cedbda"/>
+  <text x="111" y="304" text-anchor="middle" font-size="20">観測・条件</text>
+  <path d="M199 297h20m-6-6 6 6-6 6" fill="none" stroke="#637b61" stroke-width="2"/>
+  <rect x="229" y="266" width="144" height="62" rx="10" fill="#fffdf7" stroke="#cedbda"/>
+  <text x="301" y="304" text-anchor="middle" font-size="20">係数の推定</text>
+  <path d="M383 297h20m-6-6 6 6-6 6" fill="none" stroke="#637b61" stroke-width="2"/>
+  <rect x="412" y="266" width="156" height="62" rx="10" fill="#163c30"/>
+  <text x="490" y="304" text-anchor="middle" font-size="20" fill="#fffdf7">有限候補比較</text>
+ </g>
+</svg>

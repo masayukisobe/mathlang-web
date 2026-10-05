@@ -1,0 +1,10 @@
+{
+  "dataKind": "independently-checked-explanation",
+  "description": "架空入力を独立に検算した説明例。MathLangによる計算・保存結果ではない。",
+  "inputRef": "../demos/d01/start-data.json",
+  "solution": {"x": 1, "y": 2},
+  "substitutedLhs": [5, 5],
+  "residualConvention": "A*x-b",
+  "residual": [0, 0],
+  "euclideanNorm": 0
+}

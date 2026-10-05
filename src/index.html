@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MathLangは、問いとデータを条件のわかる計算と判断につなぐAI数理工学プラットフォーム。個人R&Dとして、連立方程式・二群の判断・振動同定の現在と次の検証を紹介します。">
+  <meta name="theme-color" content="#163c30">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>MathLang — 問いとデータを、計算と判断へ。</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="MathLang ページ先頭へ"><img src="assets/mark.svg" width="40" height="40" alt=""><span>MathLang</span></a>
+    <nav aria-label="主なセクション"><a href="#demos">3つの紹介</a><a href="#workflow">作業の流れ</a><a href="#status">開発の現在</a></nav>
+    <span class="rd-tag">個人R&amp;D</span>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> MATH × AI × ENGINEERING</p>
+        <h1 id="hero-title">問いとデータを、<br>条件のわかる<br><span>計算と判断へ。</span></h1>
+        <p class="hero-lead">数学知と実応用をつなぐ、<br>AI数理工学プラットフォーム。</p>
+        <p class="hero-description">式を解く。観測からモデルを作る。条件を変えて比べる。MathLangは、数学AIと条件を持つ計算をつなぎ、結果と根拠を読み直せる作業を育てています。</p>
+        <a class="button" href="#linear-example">計算の読み方を見る <span aria-hidden="true">↗</span></a>
+        <p class="hero-note">開発中の紹介ページ · 状態更新 __UPDATED_AT__</p>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-heading"><span class="mini-label">ONE SMALL QUESTION</span><span class="visual-number">01 / 03</span></div>
+        <p class="visual-question">「この答えは、元の式を満たす？」</p>
+        <figure><img src="assets/linear.svg" width="600" height="360" alt="架空の2式 3x+y=5 と x+2y=5。独立検算した解はx=1、y=2で、元式の残差は両方0。"><figcaption>計算の読み方を示す説明例。実行画面ではありません。</figcaption></figure>
+        <div class="visual-end"><span aria-hidden="true">↳</span><p>答えに、<strong>元の問題と確かめ方</strong>を添える。</p></div>
+      </div>
+    </section>
+    <div class="principle-band"><div class="wrap"><p>解だけでなく、条件と根拠まで。</p><span>問い <i aria-hidden="true">→</i> 確認 <i aria-hidden="true">→</i> 計算 <i aria-hidden="true">→</i> 判断</span></div></div>
+    <section class="section wrap" id="demos" aria-labelledby="demos-title">
+      <div class="section-heading"><p class="eyebrow">THREE WAYS IN</p><h2 id="demos-title"><span class="heading-phrase">基本数学から、</span><span class="heading-phrase">工学の判断へ。</span></h2><p>小さな式から始めて、データの読み方、観測とモデルの関係へ。<br class="desktop-break">3つの問いで、MathLangが育てている作業を紹介します。</p></div>
+      <div class="demo-grid">__DEMO_CARDS__</div>
+      <p class="section-note">掲載図は新しく描いた説明図です。製品の実行UIや収録済み実演は、対応する一巡の検証後に差し替えます。</p>
+    </section>
+    <section class="example-section" id="linear-example" aria-labelledby="example-title"><div class="wrap example-grid">
+      <div><p class="eyebrow">READ THE CALCULATION</p><h2 id="example-title">元の式に戻す。<br>そこから読めることを考える。</h2><p>架空の連立方程式を、独立に代入して確かめます。残差は「左辺 − 右辺」。この厳密な数の説明では、両方の残差とそのノルムは0です。</p><p>実際の数値計算では、小さい残差と真の解に近いことの保証を分けて読みます。条件や精度を含めて、何が確かめられたかを扱うのが次の問いです。</p><p class="fine-print">ここに示す値は説明用の独立検算で、MathLangの実行・保存結果やFloat64の実測値ではありません。</p></div>
+      <div class="calculation-sheet"><div class="sheet-heading"><span>架空入力 / D01</span><span class="mini-label">INDEPENDENT CHECK</span></div><div class="equations"><p>3x + y = 5</p><p>x + 2y = 5</p></div><div class="answer"><span>解</span><strong>x = 1, y = 2</strong></div><dl class="check-list"><div><dt>1つ目の式</dt><dd>3 × 1 + 2 − 5 = <strong>0</strong></dd></div><div><dt>2つ目の式</dt><dd>1 + 2 × 2 − 5 = <strong>0</strong></dd></div><div><dt>残差のノルム</dt><dd>√(0² + 0²) = <strong>0</strong></dd></div></dl><div class="sheet-links"><a href="demos/d01/start-data.json">架空の生入力（JSON）</a><a href="results/d01-explanation.json">独立検算例（JSON）</a></div></div>
+    </div></section>
+    <section class="section wrap" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading"><p class="eyebrow">FROM QUESTION TO EVIDENCE</p><h2 id="workflow-title"><span class="heading-phrase">人とAIと数学が、</span><span class="heading-phrase">役割を持つ。</span></h2><p>本人の問いを整理し、条件を確認してから計算へ。<br class="desktop-break">この流れを、各デモの入口と保存された根拠へつないでいます。</p></div>
+      <ol class="flow" role="list"><li role="listitem"><span class="flow-index">01</span><span class="flow-owner">本人</span><h3>問いと生入力</h3><p>知りたいことと、手元の式・表・観測を出す。</p></li><li role="listitem"><span class="flow-index">02</span><span class="flow-owner">AI</span><h3>条件と方法を整理</h3><p>数学知を参照し、不足している条件を確かめる。</p></li><li role="listitem"><span class="flow-index">03</span><span class="flow-owner">本人</span><h3>前提を確認</h3><p>データの意味、単位、範囲、採取条件を確認する。</p></li><li role="listitem"><span class="flow-index">04</span><span class="flow-owner">数理処理</span><h3>宣言した計算</h3><p>対象と方法を定め、結果と成立条件を読む。</p></li><li role="listitem"><span class="flow-index">05</span><span class="flow-owner">本人</span><h3>判断と根拠を残す</h3><p>元の条件と結果を結び、後から読み直す。</p></li></ol>
+      <p class="section-note">専用経路で確認した部分と、新しい一巡へ接続している部分があります。各紹介の現在の範囲を、下に分けて示します。</p>
+    </section>
+    <section class="status-section" id="status" aria-labelledby="status-title"><div class="wrap section">
+      <div class="section-heading status-heading"><div><p class="eyebrow">A RESEARCH PROJECT, IN VIEW</p><h2 id="status-title"><span class="heading-phrase">今あるものと、</span><span class="heading-phrase">次に確かめること。</span></h2></div><p>個人R&amp;Dとして開発中です。数学API・専用操作・通常会話・本人の一巡を分けて確かめています。実装済みの表示は、記載した限定範囲に対応します。</p></div>
+      <div class="scope-list">__SCOPE_ROWS__</div>
+      <div class="verification-note"><span class="mini-label">ABOUT THE DATES</span><p>状態・更新日：__UPDATED_AT__。資料照合日は保存された根拠を読んだ日です。受入は過去の固定版の範囲で、新しい製品実行や現source全体の再受入を表しません。</p></div>
+      <div class="next-header"><h3>紹介を育てる、次の題材</h3><span>紹介構想 / 数学の既存根拠は別に記載</span></div><div class="next-grid">__NEXT_CARDS__</div>
+    </div></section>
+    <section class="section wrap materials" id="materials" aria-labelledby="materials-title"><div><p class="eyebrow">INPUTS &amp; ORIGIN</p><h2 id="materials-title"><span class="heading-phrase">小さな入力、</span><span class="heading-phrase">確かめられる来歴。</span></h2><p>公開素材は、新規の説明文・SVG・架空の生入力です。二群の8行CSVと、解析式から作った振動13点も用意しました。これらの新しい入力を製品で実行した結果は、初版に掲載していません。</p></div><div class="materials-links"><a href="materials/README.md"><span>3つの入力と適用条件を読む</span><span aria-hidden="true">↗</span></a><a href="materials/d02-start.csv"><span>二群の架空入力（CSV）</span><span aria-hidden="true">↗</span></a><a href="materials/d04-observations.tsv"><span>振動の合成観測（TSV）</span><span aria-hidden="true">↗</span></a><a href="materials/d04-conditions.txt"><span>振動の宣言条件（TXT）</span><span aria-hidden="true">↗</span></a><a href="provenance/site.json"><span>状態・採用範囲・公開ファイルのhash</span><span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer wrap"><div><a class="brand" href="#top"><img src="assets/mark.svg" width="32" height="32" alt=""><span>MathLang</span></a><p>問いとデータを、条件のわかる計算と判断へ。</p></div><div class="footer-meta"><p>__RELEASE__ · __UPDATED_AT__</p><p>__REPO_LINK__</p></div></footer>
+</body>
+</html>

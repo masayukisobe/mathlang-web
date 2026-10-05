@@ -1,0 +1,7 @@
+{
+  "dataKind": "fictional-start-input",
+  "description": "説明用に新しく作成した連立方程式の生入力。MathLangの実行記録を含まない。",
+  "variables": ["x", "y"],
+  "matrix": [[3, 1], [1, 2]],
+  "rhs": [5, 5]
+}

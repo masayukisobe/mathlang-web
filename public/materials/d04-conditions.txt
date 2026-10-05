@@ -1,0 +1,12 @@
+mass_kg=1
+initial_time_s=0
+initial_displacement_m=1
+initial_velocity_m_per_s=-0.5
+constant_force_N=0
+stiffness_lower_N_per_m=0.25
+stiffness_upper_N_per_m=4
+damping_lower_N_s_per_m=0.1
+damping_upper_N_s_per_m=3
+initial_stiffness_N_per_m=0.8
+initial_damping_N_s_per_m=0.6
+residual_scale_m=1

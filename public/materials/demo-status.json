@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "mathlang.public_demo_status.v1",
+  "asOf": "2026-10-05",
+  "presentation": "静的な説明図と計算の読み方",
+  "D01": {
+    "existingEvidence": "求解→残差→norm、保存実行の限定された公開/旧UI経路",
+    "newTextInputPanel": "未接続候補",
+    "ordinaryAiChat": "未接続",
+    "newFictionalInputExplanation": "代入による独立検算。製品Runではない",
+    "newScratchPersonaAccepted": false
+  },
+  "D02": {
+    "existingEvidence": "二群評価の数学層、専用会話での計算/訂正/元条件再実行",
+    "repairState": "本人発言保存とpaired事実整合を修正中",
+    "mainPersonaAccepted": false,
+    "newEightRowInputProductResultPublished": false
+  },
+  "D04": {
+    "existingEvidence": "固定SI/既知mass/正k,c/有限候補比較と既存専用UIの限定検証",
+    "comparisonScope": "指定出力時刻での最大絶対変位",
+    "ordinaryAiChat": "未接続",
+    "newTsvScratchPersonaAccepted": false,
+    "newTsvProductResultPublished": false,
+    "fictionalObservationOrigin": "解析式の標本。実物の測定値ではない"
+  },
+  "performancePriceDeploymentClaims": []
+}

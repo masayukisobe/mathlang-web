@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+ <rect width="600" height="360" rx="20" fill="#f4f0e8"/>
+ <g font-family="system-ui,sans-serif" fill="#163c30">
+  <text x="32" y="42" font-size="14" letter-spacing="2">TWO-GROUP DECISION</text><text x="466" y="42" font-size="13">説明図 / D02</text>
+  <rect x="32" y="76" width="253" height="154" rx="14" fill="#fffdf7" stroke="#d7d3c6"/>
+  <text x="53" y="108" font-size="13" fill="#566458">観測から読む</text>
+  <text x="53" y="153" font-size="25">平均の差</text><text x="53" y="196" font-size="25">差の不確かさ</text>
+  <rect x="315" y="76" width="253" height="154" rx="14" fill="#fffdf7" stroke="#d7d3c6"/>
+  <text x="336" y="108" font-size="13" fill="#566458">本人が確かめる</text>
+  <text x="336" y="153" font-size="25">必要な改善幅</text><text x="336" y="196" font-size="25">採取の条件</text>
+  <path d="M158 239v17h284v-17M300 256v17m-6-6 6 6 6-6" fill="none" stroke="#637b61" stroke-width="2"/>
+  <rect x="32" y="286" width="536" height="42" rx="10" fill="#163c30"/>
+  <text x="300" y="314" text-anchor="middle" font-size="19" fill="#fffdf7">展開 / 保留 / 追加調査 の理由へ</text>
+ </g>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "mathlang.public_material_provenance.v1",
+  "asOf": "2026-10-05",
+  "materialOrigin": "新規の日本語説明と架空生入力。原source/画像/QA/trace/会話を含まない",
+  "referenceSnapshots": [
+    {
+      "id": "D01-prior-public-integration",
+      "sha256": "8df3ed11dd193fa2c8d6b6775133c46bcd8a35f94326ab891cecc0aa7e9558db",
+      "adoptedScope": [
+        "公開求解/残差/normと旧統合UIの限定範囲"
+      ]
+    },
+    {
+      "id": "D02-prior-dedicated-conversation",
+      "sha256": "a41979a792e42e12bbccac87cb049fa3c1169c21b18e422ad8ccdc33042d6414",
+      "adoptedScope": [
+        "計算/訂正/元条件replayは通過",
+        "主ペルソナ未受入"
+      ]
+    },
+    {
+      "id": "D02-current-state",
+      "sha256": "13b821fb03001ced5177902862ef0fd6343808218454951af63fbf549b47c3ed",
+      "adoptedScope": [
+        "v4局所修正中",
+        "主ペルソナ未受入"
+      ]
+    },
+    {
+      "id": "D04-prior-dedicated-ui",
+      "sha256": "6a69deafbb2f0bd6bfcdcbe8e7b36a1d0a0dc8b7e86afecbed9594904a9408a5",
+      "adoptedScope": [
+        "固定SI SDOFと既存専用UIの限定受入"
+      ]
+    }
+  ],
+  "referenceHashMeaning": "採用範囲の根拠記録の版。根拠記録そのものはこの公開素材に同梱しない",
+  "publicFileHashes": {
+    "README.md": "b4c9f663cc91769f669302fa326c51e80061152e2c590a56010496feebbaf60d",
+    "d01-start.txt": "13ad363666468d0cbe4fc21fb1e64f2c578cacd893690146cf40baa77e7d63fb",
+    "d02-start.csv": "21dd381fde954d5792c77ee29fb02370180e86140d9ceb29544d71d2a37a61f2",
+    "d04-conditions.txt": "e7ed5d9cedc863b840d981fc2722e9dfa90133964b58873830a4f5dcd5c94145",
+    "d04-observations.tsv": "1f93770467dd7fe5af1ec66c73c82cd4e3ff3413fc323e9ae5ef1b73c049c84c",
+    "demo-status.json": "95f5c7547e59854c5e757dbbfe0a8cda3fe76435bda7942cfa970c435179145e"
+  },
+  "diagramOrigin": "サイト担当が新規制作する説明用SVG。公開側で個別hashを加える",
+  "newProductPersonaAcceptance": false,
+  "descriptionArithmeticIsProductRun": false
+}
